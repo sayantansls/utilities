@@ -4,19 +4,21 @@
 
 This script consumes a CSV (comma separated) file and pretty prints into the following format:
 	
-	Key1 : Value1
-	Key2 : Value2
-	Key3 : Value3
-
+	Row Number : 1
+	Column header 1 : Value1
+	Column header 2 : Value2
+	Column header 3 : Value3
+	
 	pp_csv <filename>
 
 #### Script "pp_tsv.py"
 
 This script consumes a TSV (tab separated) file and pretty prints into the following format:
 
-	Key1 : Value1
-	Key2 : Value2
-	Key3 : Value3
+	Row Number : 1
+	Column header 1 : Value1
+	Column header 2 : Value2
+	Column header 3 : Value3
 
 	pp_tsv <filename>
 
