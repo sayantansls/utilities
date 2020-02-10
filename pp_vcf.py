@@ -6,7 +6,6 @@
 from __future__ import print_function
 import csv
 import sys
-import collections
 
 def read_vcf(vcf_file):
 	f = open(vcf_file, 'r')
@@ -21,9 +20,8 @@ def pretty_print_vcf(data):
 		i = i + 1
 		print('\n')
 		print("Variant number :", i)
-		new_entry = collections.OrderedDict(entry)
 
-		for key,value in new_entry.items():
+		for key,value in entry.items():
 			print(key, ":", value)
 		print('\n')
 		print('#'*50)

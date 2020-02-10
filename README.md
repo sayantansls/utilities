@@ -44,6 +44,31 @@ This script consumes a StrandOmics VCF (variant calling format) file and pretty 
 
 	Command : pp_vcf <filename>
 
+#### Script "pp_progenity_vcf.py"
+
+This script consumes a Progenity VCF (variant calling format) file and pretty prints into the following format:
+
+	Variant number : 1351
+	INFO : 
+		Progenity HGVS : HGVSg=NC_000023.11:g.154863151C>T;HGVSc=NM_000132.3:c.6506G>A;HGVSp=NP_000123.1:p.Arg2169His
+		SnpEff Annotations :
+			Annotation number : 1
+			|missense_variant|MODERATE|F8|F8|transcript|NM_000132.3|protein_coding|23/26|NM_000132.3:c.6506G>A|NP_000123.1:p.Arg2169His|6677/9036|6506/7056|2169/2351||
+			Annotation number : 2
+			|missense_variant|MODERATE|F8|F8|transcript|NM_019863.2|protein_coding|2/5|NM_019863.2:c.101G>A|NP_063916.1:p.Arg34His|246/2605|101/651|34/216||
+	SAMPLE : 0/1
+	FORMAT : GT
+	POS : 154863151
+	FILTER : .
+	QUAL : .
+	#CHROM : chrX
+	ALT : T
+	REF : C
+	ID : VSYTWGIITQ
+
+	Command : pp_progenity_vcf <filename>
+
+
 #### How to add python script to path?
 
 	Make a directory ~/bin
