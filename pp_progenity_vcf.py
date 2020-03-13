@@ -23,7 +23,7 @@ def pretty_print_progenity_vcf(data):
 		print("Variant number :", i)
 		j = 0
 
-		#for key,value in entry.items():
+		for key,value in entry.items():
 			delimiter = ',' + entry['ALT']
 			if key == 'INFO':
 				progenity_details = ''.join(re.findall(r'^HGVS.+;', value))[:-1]
