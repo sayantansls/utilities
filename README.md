@@ -2,16 +2,22 @@
 
 ## Script "pp_csv.py"
 
+### Definition
+
 This script consumes a CSV (comma separated) file and pretty prints into the following format:
 	
 	Row Number : 1
 	Column header 1 : Value1
 	Column header 2 : Value2
 	Column header 3 : Value3
-	
-	Command : pp_csv <filename>
+
+### Execution
+
+	pp_csv <filename>
 
 ## Script "pp_tsv.py"
+
+### Definition
 
 This script consumes a TSV (tab separated) file and pretty prints into the following format:
 
@@ -20,13 +26,17 @@ This script consumes a TSV (tab separated) file and pretty prints into the follo
 	Column header 2 : Value2
 	Column header 3 : Value3
 
-	Command : pp_tsv <filename>
+### Execution
+
+	pp_tsv <filename>
 
 ## Script "pp_json.py"
 
 [This script is still under construction]
 
 ## Script "pp_vcf.py"
+
+### Definition
 
 This script consumes a StrandOmics VCF (variant calling format) file and pretty prints into the following format:
 
@@ -42,9 +52,13 @@ This script consumes a StrandOmics VCF (variant calling format) file and pretty 
 	FORMAT : GT:GQ:DP:SR:VR:VA:SB:ABQ:AMQ
 	STRAN-398_S2_DMiSeq01-Run0071 : 0/1:1000.00:694:75.22:75.22:0:0.20:37.07:254.00
 
-	Command : pp_vcf <filename>
+### Execution
+
+	pp_vcf <filename>
 
 ## Script "pp_progenity_vcf.py"
+
+### Definition
 
 This script consumes a Progenity VCF (variant calling format) file and pretty prints into the following format:
 
@@ -66,7 +80,22 @@ This script consumes a Progenity VCF (variant calling format) file and pretty pr
 	REF : C
 	ID : VSYTWGIITQ
 
-	Command : pp_progenity_vcf <filename>
+### Execution
+
+	pp_progenity_vcf <filename>
+
+## Script "give_proper_names.py"
+
+### Definition
+
+This script consumes files or directories and gives proper names to them. All the characters are changed to lowercase and the spaces are replaced by hyphen. Example -
+
+	Original directory name - 'Test Name/' ; Final directory name - test-name/
+	Original file name - 'Test name.txt' ; Final file name - test-name.txt
+
+### Execution
+
+	proper_names <filename1> <filename2> <dirname1> <dirname2> ......
 
 
 ## How to add python script to path?
