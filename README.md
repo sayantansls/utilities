@@ -1,6 +1,6 @@
-### The scripts in this directory are as follows:
+# Utility Scripts
 
-#### Script "pp_csv.py"
+## Script "pp_csv.py"
 
 This script consumes a CSV (comma separated) file and pretty prints into the following format:
 	
@@ -11,7 +11,7 @@ This script consumes a CSV (comma separated) file and pretty prints into the fol
 	
 	Command : pp_csv <filename>
 
-#### Script "pp_tsv.py"
+## Script "pp_tsv.py"
 
 This script consumes a TSV (tab separated) file and pretty prints into the following format:
 
@@ -22,11 +22,11 @@ This script consumes a TSV (tab separated) file and pretty prints into the follo
 
 	Command : pp_tsv <filename>
 
-#### Script "pp_json.py"
+## Script "pp_json.py"
 
 [This script is still under construction]
 
-#### Script "pp_vcf.py"
+## Script "pp_vcf.py"
 
 This script consumes a StrandOmics VCF (variant calling format) file and pretty prints into the following format:
 
@@ -44,7 +44,7 @@ This script consumes a StrandOmics VCF (variant calling format) file and pretty 
 
 	Command : pp_vcf <filename>
 
-#### Script "pp_progenity_vcf.py"
+## Script "pp_progenity_vcf.py"
 
 This script consumes a Progenity VCF (variant calling format) file and pretty prints into the following format:
 
@@ -69,10 +69,14 @@ This script consumes a Progenity VCF (variant calling format) file and pretty pr
 	Command : pp_progenity_vcf <filename>
 
 
-#### How to add python script to path?
+## How to add python script to path?
 
 	Make a directory ~/bin
 	Make the python script executable -- chmod +x pp_csv.py
 	Add the following line to the /.bashrc file -- export PATH="$PATH:$HOME/bin"
 	Link the script to a command -- ln -s $HOME/utilities/pp_csv.py $HOME/bin/pp_csv
 	Repeat the above steps for pp_tsv and pp_json
+
+## Contact
+
+Author : Sayantan Ghosh (sayantan.ghosh@strandls.com)
