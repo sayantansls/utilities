@@ -11,7 +11,29 @@ from fuzzywuzzy import fuzz
 
 files_list = list()
 home = os.path.expanduser("~")
-threshold = 60
+START_THRESHOLD, DECREMENT = [85, 5]
+
+def match_string(file_of_interest, threshold):
+	isFound = 0
+	print('INFO: Searching for file with {}% matching'.format(threshold))
+	for file in files_list:
+		file_basename = os.path.basename(file)
+		match_ratio = fuzz.ratio(file_of_interest, file_basename)
+		if match_ratio > threshold:
+			locations_found.add(file)
+			isFound = 1
+
+	if isFound:
+		print('INFO: Files found at {}% matching'.format(threshold))
+		print('INFO: The file "{}" is present at {} locations'.format(file_of_interest, len(locations_found)))
+		pprint(locations_found)
+	else:
+		print('INFO: No file found at {}% matching'.format(threshold))
+		threshold = threshold - DECREMENT
+		if threshold > 0:
+			match_string(file_of_interest, threshold)
+		else:
+			print('FAIL: Exhausted all search options. File not found')
 
 def get_contents_of_dir(directory):
 	contents = os.listdir(directory)
@@ -24,26 +46,14 @@ def get_contents_of_dir(directory):
 		elif os.path.isfile(content_path):
 			files_list.append(content_path)
 
-def main(file_name):
+def main(file_of_interest):
+	global locations_found
+	locations_found = set()
+	print('INFO: Searching for "{}" file'.format(file_of_interest))
 	get_contents_of_dir(home)
-	isFound, locations_found = [0, set()]
-	for file in files_list:
-		file_basename = os.path.basename(file)
-		match_ratio = fuzz.ratio(file_name, file_basename)
-		if match_ratio > threshold:
-			isFound = 1
-			locations_found.add(file)
-			#print(file_name, file_basename, match_ratio)
-
-	print('INFO: Searching for similar files with string matching....')
-	print('INFO: File names with greater than {}% matching are considered'.format(threshold))
-
-	if isFound:
-		print('INFO: File searched for is FOUND')
-		print('INFO: The file "{}" is present at {} locations'.format(file_name, len(locations_found)))
-		pprint(locations_found)
-	else:
-		print('INFO: The file {} is not found'.format(file_name))
+	match_string(file_of_interest, START_THRESHOLD)
+	print('\n')
 
 if __name__ == '__main__':
-	main(sys.argv[1])
+	for input_file in sys.argv[1:]:
+		main(input_file)
