@@ -97,6 +97,31 @@ This script consumes files or directories and gives proper names to them. All th
 
 	proper_names <filename1> <filename2> <dirname1> <dirname2> ......
 
+## Script "find_file.py"
+
+### Definition
+
+This script consumes file(s) and locates them through string matching. It starts with a 85% string matching threshold and gradually goes down in decrements of 5% unless results are found, in which case it stops.
+
+	find_file genes
+
+	INFO: Searching for "genes" file
+	INFO: Searching for file with 85% matching
+	INFO: No file found at 85% matching
+	INFO: Searching for file with 80% matching
+	INFO: No file found at 80% matching
+	INFO: Searching for file with 75% matching
+	INFO: No file found at 75% matching
+	INFO: Searching for file with 70% matching
+	INFO: Files found at 70% matching
+	INFO: The file "genes" is present at 3 locations
+	set(['/home/sayantan/SpliceAI/data/strandomics_input_data/GrCh37/genes.tsv',
+	     '/home/sayantan/StrandOmics_utilities/data/strandomics_data/genes.tsv',
+	     '/home/sayantan/vcf-generator/data/strandomics_input_data/GrCh37/genes.tsv'])
+
+### Execution
+
+	find_file <filename1> <filename2> .....
 
 ## How to add python script to path?
 
